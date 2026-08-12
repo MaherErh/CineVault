@@ -1,0 +1,288 @@
+/* stijlen voor de film kaarten */
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.movie-grid--list {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* film kaart */
+.movie-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #DDD6F7;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.dark .movie-card {
+  background: #1A1433;
+  border-color: #2D2350;
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(108, 99, 255, 0.18);
+}
+
+/* poster */
+.card-poster-wrap {
+  position: relative;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: #F0ECFF;
+}
+
+.card-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover .card-poster {
+  transform: scale(1.05);
+}
+
+.card-poster--placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  background: #F0ECFF;
+}
+
+/* rating badge op de poster */
+.card-rating {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #FFD166;
+  color: #3D2E00;
+}
+
+/* favoriet knop op de poster */
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+}
+
+/* kaart info onderaan */
+.card-info {
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1A1033;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+body.dark .card-title {
+  color: #F0ECFF;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-year {
+  font-size: 12px;
+  color: #8880A8;
+}
+
+.card-votes {
+  font-size: 11px;
+  color: #8880A8;
+}
+
+.card-genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.genre-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #F0ECFF;
+  border: 1px solid #DDD6F7;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6C63FF;
+}
+
+body.dark .genre-chip {
+  background: #231B3D;
+  border-color: #2D2350;
+}
+
+/* lijstweergave */
+.movie-card--list {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+}
+
+.movie-card--list .card-poster-wrap {
+  display: none;
+}
+
+.movie-card--list .card-poster {
+  width: 80px;
+  min-width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-card--list .card-poster--placeholder {
+  width: 80px;
+  min-width: 80px;
+  height: 120px;
+  border-radius: 10px;
+  font-size: 28px;
+}
+
+.card-info--list {
+  flex: 1;
+  padding: 0;
+  gap: 8px;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-top .card-title {
+  font-size: 16px;
+  -webkit-line-clamp: 1;
+}
+
+.card-top .fav-btn {
+  position: static;
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  background: #F0ECFF;
+}
+
+.card-info--list .card-rating {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+}
+
+.card-overview {
+  font-size: 13px;
+  color: #8880A8;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* skeleton loading */
+.skeleton-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #DDD6F7;
+  overflow: hidden;
+}
+
+body.dark .skeleton-card {
+  background: #1A1433;
+  border-color: #2D2350;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #F0ECFF 25%, #EBE6FF 50%, #F0ECFF 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
+
+body.dark .skeleton {
+  background: linear-gradient(90deg, #231B3D 25%, #2D2350 50%, #231B3D 75%);
+  background-size: 200% 100%;
+}
+
+.skeleton--poster {
+  aspect-ratio: 2/3;
+  border-radius: 0;
+}
+
+.skeleton--line {
+  height: 14px;
+  margin: 12px 16px 0;
+}
+
+.skeleton--short {
+  width: 60%;
+  margin-bottom: 16px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* responsive */
+@media (max-width: 900px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}

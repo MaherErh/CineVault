@@ -1,13 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>cinevault</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVault — Discover Movies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- navigatie bovenaan -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo" id="logo-link">
+        <span class="logo-icon">🎬</span>
+        <span class="logo-text">CineVault</span>
+      </a>
+      <nav class="main-nav">
+        <button type="button" class="nav-btn nav-btn--active" data-view="discover">Discover</button>
+        <button type="button" class="nav-btn" data-view="favourites">
+          ❤️ Favourites
+          <span class="fav-count" id="fav-count">0</span>
+        </button>
+      </nav>
+      <button type="button" class="theme-toggle" id="theme-toggle">🌙</button>
+    </div>
+  </header>
+
+  <!-- zoekbalk bovenaan -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">The world's movies, in your hands</p>
+      <h1 class="hero-title">Find your next<br><em>favourite film</em></h1>
+      <div class="search-bar">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Search by title..."
+          autocomplete="off"
+        >
+        <button type="button" class="search-clear hidden" id="search-clear">✕</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- hoofdinhoud -->
+  <main class="main-content">
+
+    <!-- discover pagina -->
+    <section class="view" id="view-discover">
+
+      <!-- filters -->
+      <div class="filters-bar">
+        <div class="filters-row">
+          <div class="filter-group">
+            <label class="filter-label" for="genre-filter">Genre</label>
+            <select id="genre-filter" class="filter-select">
+              <option value="">All genres</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" for="year-filter">Year</label>
+            <select id="year-filter" class="filter-select">
+              <option value="">All years</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" for="rating-filter">Min rating</label>
+            <select id="rating-filter" class="filter-select">
+              <option value="">Any rating</option>
+              <option value="9">9+</option>
+              <option value="8">8+</option>
+              <option value="7">7+</option>
+              <option value="6">6+</option>
+              <option value="5">5+</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label" for="sort-select">Sort by</label>
+            <select id="sort-select" class="filter-select">
+              <option value="popularity.desc">Most popular</option>
+              <option value="vote_average.desc">Top rated</option>
+              <option value="release_date.desc">Newest</option>
+              <option value="release_date.asc">Oldest</option>
+              <option value="title.asc">Title A–Z</option>
+              <option value="title.desc">Title Z–A</option>
+            </select>
+          </div>
+          <button type="button" class="btn-reset" id="reset-filters">↺ Reset</button>
+        </div>
+        <div class="active-filters" id="active-filters"></div>
+      </div>
+
+      <!-- aantal resultaten en weergave knoppen -->
+      <div class="results-info">
+        <span id="results-count"></span>
+        <div class="view-toggle">
+          <button type="button" class="view-btn view-btn--active" id="grid-view-btn">⊞</button>
+          <button type="button" class="view-btn" id="list-view-btn">☰</button>
+        </div>
+      </div>
+
+      <!-- film grid -->
+      <div class="movie-grid" id="movie-grid"></div>
+
+      <!-- paginering -->
+      <div class="pagination" id="pagination"></div>
+
+    </section>
+
+    <!-- favorieten pagina -->
+    <section class="view hidden" id="view-favourites">
+      <div class="favourites-header">
+        <h2 class="section-title">My Favourites</h2>
+        <button type="button" class="btn-clear-all" id="clear-all-favs">Clear all</button>
+      </div>
+      <div class="movie-grid" id="fav-grid"></div>
+      <div class="fav-empty hidden" id="fav-empty">
+        <span class="fav-empty-icon">🎞️</span>
+        <p class="fav-empty-title">No favourites yet</p>
+        <p class="fav-empty-text">Browse movies and tap the ❤️ to save them here.</p>
+        <button type="button" class="btn-primary" data-view="discover">Discover movies</button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- film detail popup -->
+  <div class="modal-overlay hidden" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button type="button" class="modal-close" id="modal-close">✕</button>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- melding onderaan -->
+  <div class="toast hidden" id="toast"></div>
+
+  <script type="module" src="/src/js/main.js"></script>
+</body>
 </html>

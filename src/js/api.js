@@ -1,7 +1,7 @@
 // api.js - alle calls naar de TMDB API
 
 const BASE_URL = 'https://api.themoviedb.org/3'
-const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4YTkzNzY3NjZiNzUyNDYxZTg4ZGM2NGNmNjNmMTQwMiIsIm5iZiI6MTc0ODYyNzAyMy4xNzgsInN1YiI6IjY4MzUwMzNmOGM3MzZmYzJmOTk0OWZiMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.cWmYkY1H0vFWCkKpRHPjMXZ7kBkVLkfJ3gDPJq9W1C4'
+const API_KEY = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3YjkwNWYxMTAyMWNlNGI5YTE2MmNmNjdkYjAwMjVhMiIsIm5iZiI6MTc4Njc0NjI1NC4xMzIsInN1YiI6IjZhN2Y5NThlYmU3MDZjNmJiYmY3ZjBhNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Wj-8eUMdUhUITHYPFfqSbTgbz465cb-4M0izPCVfkCk'
 
 export const IMAGE_URL = 'https://image.tmdb.org/t/p'
 

@@ -37,25 +37,25 @@ Gebruikte endpoints:
 
 | Vereiste | Bestand | Lijn | Uitleg |
 |---|---|---|---|
-| **Elementen selecteren** | `src/js/main.js` | 44 | `document.getElementById` voor alle UI elementen |
-| **Elementen manipuleren** | `src/js/main.js` | 120 | `.innerHTML` voor movieGrid en pagination |
-| **Events koppelen** | `src/js/main.js` | 160 | `addEventListener` op filters, knoppen en kaarten |
-| **Constanten** | `src/js/api.js` | 1 | `const BASE_URL` en `const API_KEY` |
-| **Template literals** | `src/components/movieCard.js` | 20 | HTML opbouwen met backticks en `${}` |
-| **Iteratie over arrays** | `src/js/main.js` | 125 | `.map()` over movies array |
-| **Array methodes** | `src/js/storage.js` | 35 | `.filter()`, `.find()`, `.some()`, `.unshift()` |
-| **Arrow functions** | `src/js/main.js` | overal | Alle callbacks geschreven als arrow functions |
-| **Ternary operator** | `src/components/movieCard.js` | 17 | `rating ? rating.toFixed(1) : 'N/A'` |
-| **Callback functions** | `src/js/main.js` | 159 | `setTimeout(() => loadMovies(), 400)` debounce |
-| **Promises** | `src/js/api.js` | 28 | `fetch()` geeft een Promise terug |
-| **Async & Await** | `src/js/main.js` | 80 | `async function loadMovies()` met `await` |
-| **Observer API** | `src/js/main.js` | 253 | `IntersectionObserver` voor kaart animaties bij scrollen |
-| **Fetch** | `src/js/api.js` | 28 | Data ophalen van TMDB met Authorization header |
-| **JSON** | `src/js/api.js` | 43 | `.json()` parsen van API response |
-| **LocalStorage** | `src/js/storage.js` | 1 | Favorieten, thema en voorkeuren bewaren |
-| **Formulier validatie** | `src/js/main.js` | 140 | Lege zoekopdracht wordt geblokkeerd |
-| **Flexbox** | `src/css/global.css` | 120 | Header en filters layout |
-| **CSS Grid** | `src/css/components.css` | 10 | Movie grid layout |
+| **Elementen selecteren** | `src/js/main.js` | 30-50 | `document.getElementById` voor alle UI elementen |
+| **Elementen manipuleren** | `src/js/main.js` | 110 | `.innerHTML` aanpassen voor movieGrid |
+| **Events koppelen** | `src/js/main.js` | 170 | `addEventListener` op zoekbalk en knoppen |
+| **Constanten** | `src/js/api.js` | 3-4 | `const BASE_URL` en `const API_KEY` |
+| **Template literals** | `src/components/movieCard.js` | 25 | HTML opbouwen met backticks en `${}` |
+| **Iteratie over arrays** | `src/js/main.js` | 112 | `.map()` over movies array |
+| **Array methodes** | `src/js/storage.js` | 20 | `.filter()`, `.find()`, `.some()` |
+| **Arrow functions** | `src/js/main.js` | overal | Alle callbacks als arrow functions |
+| **Ternary operator** | `src/components/movieCard.js` | 8 | `movie.release_date ? ... : '—'` |
+| **Callback functions** | `src/js/main.js` | 188 | `setTimeout(() => loadMovies(), 400)` |
+| **Promises** | `src/js/api.js` | 18 | `fetch()` geeft een Promise terug |
+| **Async & Await** | `src/js/main.js` | 82 | `async function loadMovies()` |
+| **Observer API** | `src/js/main.js` | 270 | `IntersectionObserver` voor kaart animaties |
+| **Fetch** | `src/js/api.js` | 18 | Data ophalen van TMDB |
+| **JSON** | `src/js/api.js` | 23 | `.json()` en `JSON.parse` / `JSON.stringify` |
+| **LocalStorage** | `src/js/storage.js` | 5 | Favorieten en voorkeuren bewaren |
+| **Formulier validatie** | `src/js/main.js` | 188 | Lege zoekopdracht wordt niet verstuurd |
+| **Flexbox** | `src/css/global.css` | 45 | Header layout |
+| **CSS Grid** | `src/css/components.css` | 3 | Movie grid layout |
 | **Vite** | `package.json` | — | Build tool en development server |
 
 ---
@@ -82,7 +82,24 @@ Open daarna **http://localhost:5173** in je browser.
 
 ## 5. Screenshots
 
-> Worden toegevoegd na voltooiing van de applicatie.
+### Hoofdpagina
+![Hoofdpagina](img/screenshot.png/Cinevault.png)
+
+### Filters
+![Filters](img/screenshot.png/filters.png)
+
+### Film detail
+![Film detail](img/screenshot.png/details.png)
+
+### Favorieten
+![Favorieten](img/screenshot.png/favourites.png)
+
+### Dark mode
+![Dark mode](img/screenshot.png/darkmode.png)
+
+### Search film
+![search film](img/screenshot.png/search.png)
+
 
 ---
 
@@ -93,4 +110,4 @@ Open daarna **http://localhost:5173** in je browser.
 - Vite documentatie: https://vitejs.dev
 - Google Fonts: https://fonts.google.com
 - AI hulp: Claude (Anthropic) — hulp bij projectstructuur en code
-- Chatlog: https://claude.ai/share (link toevoegen na voltooiing)
+- Chatlog: (https://claude.ai/share/8699ee8d-fec6-4db1-937b-9216df49fbdf)
